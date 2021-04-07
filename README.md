@@ -14,5 +14,7 @@ If you want to launch this program in a GUI just execute the file via doubleclic
 
 ### Launch the web version
 > python3 headphone-tester.py web
+
 or
+
 > python3 headphone-tester.py w

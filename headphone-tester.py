@@ -7,9 +7,10 @@ from sys import argv
 
 # HTML-URL
 url = "https://legendxd.000webhostapp.com/projects/headphone-tester/index"
-version = "1.1"
-date = "March 16 2021"
+version = "1.2"
+date = "April 7 2021"
 
+# Define Sound-Functions
 def left():
 	playsound("sounds" + sep + "beep-left.wav")
 def both():
@@ -17,7 +18,7 @@ def both():
 def right():
 	playsound("sounds" + sep + "beep-right.wav")
    
-
+# GUI
 def gui():
     root = tkinter.Tk()
     root.title("Headphones")
@@ -32,11 +33,18 @@ def gui():
     
     root.mainloop()
 
+# Parse args
 try: # Not the best solution but it does work... so...
     if(argv[1] == "web" or argv[1] == "w"):
         webbrowser.open_new_tab(url)
     elif(argv[1] == "version" or argv[1] == "v"):
-        print(f"The_Legend_of_xD's Headphone-Tester v{version}\nBuild-Date:{date}")
+        print(f"The_Legend_of_xD's Headphone-Tester v{version}\nBuild-Date: {date}")
+    elif(argv[1] == "right" or argv[1] == "r"):
+    	right()
+    elif(argv[1] == "left" or argv[1] == "l"):
+    	left()
+    elif(argv[1] == "both" or argv[1] == "b"):
+    	both()
     else:
         gui()
 except:
